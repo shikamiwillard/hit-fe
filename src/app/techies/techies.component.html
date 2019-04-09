@@ -1,0 +1,19 @@
+<div class="container-body">
+  <div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div class=" container grid-container" *ngIf="techies">
+    <div class="card" *ngFor="let techie of techies">
+      <img class="ui medium circular image" src="{{techie.img}}" alt="{{techie.name}}">
+      <div class="card-body">
+        <h3 class="header">{{techie.name}}</h3>
+        <h4 class="text-secondary">{{techie.stack}}</h4>
+        <p>{{techie.bio}}</p>
+        <a href=""> View {{techie.name}}'s profile</a>
+      </div>
+    </div>
+  </div>
+</div>
