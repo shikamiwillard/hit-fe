@@ -34,6 +34,7 @@ yarn-error.log
 testem.log
 typings
 semantic
+semantic.json
 
 # System Files
 .DS_Store

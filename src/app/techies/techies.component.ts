@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Apollo} from 'apollo-angular';
+import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
 @Component({
@@ -20,8 +20,8 @@ export class TechiesComponent implements OnInit {
   ngOnInit() {
     // const dateYear = this.now.getFullYear();
     this.apollo
-    .watchQuery({
-      query: gql`
+      .watchQuery({
+        query: gql`
       {
         techies{
           id
@@ -40,11 +40,11 @@ export class TechiesComponent implements OnInit {
         }
       }
     `
-    })
-    .valueChanges.subscribe(result => {
-      this.techies = result.data && result.data['techies'];
-      this.loading = result.loading;
-      this.error = result.errors;
-    });
+      })
+      .valueChanges.subscribe(result => {
+        this.techies = result.data && result.data['techies'];
+        this.loading = result.loading;
+        this.error = result.errors;
+      });
   }
 }
