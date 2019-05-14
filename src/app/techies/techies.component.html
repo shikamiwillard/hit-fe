@@ -12,7 +12,9 @@
         <h3 class="header">{{techie.name}}</h3>
         <h4 class="text-secondary">{{techie.stack}}</h4>
         <p>{{techie.bio}}</p>
-        <a href=""> View {{techie.name}}'s profile</a>
+        <a [routerLink]="['/techie', techie.id ]">
+          View {{techie.name}}'s profile
+        </a>
       </div>
     </div>
   </div>
