@@ -1,3 +1,13 @@
-<p>
-  techie works!
-</p>
+<div class="container-body">
+  <div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div class=" container grid-container">
+    <div>
+      {{techieData.name}}
+    </div>
+  </div>
+</div>
