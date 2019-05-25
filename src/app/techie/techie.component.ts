@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-techie',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
+
+  public techieData;
 
   ngOnInit() {
+    this.route.paramMap
+    .subscribe(param => {
+      const id = param.get('id');
+        this.techieData = id;
+    });
   }
 
 }

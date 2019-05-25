@@ -1,6 +1,6 @@
 ## HIT
 
-[![codecov](https://codecov.io/gh/willardshikami/hit-fe/branch/master/graph/badge.svg)](https://codecov.io/gh/willardshikami/hit-fe)
+[![codecov](https://codecov.io/gh/shikamiwillard/hit-fe/branch/master/graph/badge.svg)](https://codecov.io/gh/shikamiwillard/hit-fe)
 
 [![Build Status](https://travis-ci.com/shikamiwillard/hit-fe.svg?branch=master)](https://travis-ci.com/shikamiwillard/hit-fe)
 

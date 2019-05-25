@@ -11,6 +11,12 @@ import { SubmissionsComponent } from './submissions/submissions.component';
 import { TechiesComponent } from './techies/techies.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
+export function createApollo(httpLink: HttpLink) {
+  return {
+    link: httpLink.create({uri: 'https://humansintech.herokuapp.com/graphql'}),
+    cache: new InMemoryCache(),
+  };
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,18 +32,13 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     ApolloModule,
     HttpLinkModule
   ],
-  providers: [{
-    provide: APOLLO_OPTIONS,
-    useFactory(httpLink: HttpLink) {
-      return {
-        cache: new InMemoryCache(),
-        link: httpLink.create({
-          uri: 'https://humansintech.herokuapp.com/graphql'
-        })
-      };
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: createApollo,
+      deps: [HttpLink],
     },
-    deps: [HttpLink]
-  }],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
