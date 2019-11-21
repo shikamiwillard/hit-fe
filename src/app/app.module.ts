@@ -13,7 +13,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 export function createApollo(httpLink: HttpLink) {
   return {
-    link: httpLink.create({uri: 'https://humansintech.herokuapp.com/graphql'}),
+    link: httpLink.create({uri: 'https://hit-server.azurewebsites.net/graphql'}),
     cache: new InMemoryCache(),
   };
 }
